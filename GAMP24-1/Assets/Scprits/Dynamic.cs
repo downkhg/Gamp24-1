@@ -6,6 +6,9 @@ public class Dynamic : MonoBehaviour
 {
     public float speed;
     public float jumpPower;
+    public int score;
+    public bool isGround;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,37 @@ public class Dynamic : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftArrow))
             transform.position += Vector3.left * speed * Time.deltaTime;
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
+            if(isGround)
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpPower);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
+        //if (collision.gameObject.name == "cherry")
+        if (collision.gameObject.tag == "Item")
+        {
+            score++;
+            Destroy(collision.gameObject);
+        }
+
+        isGround = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isGround = false;
+    }
+
+    private void OnGUI()
+    {
+        GUI.Box(new Rect(0, 0, 100,20), $"Score:{score}");
+        GUI.Box(new Rect(0, 20, 100, 20), $"Ground:{isGround}");
     }
 }
