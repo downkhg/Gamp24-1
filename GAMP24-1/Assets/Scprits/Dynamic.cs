@@ -49,7 +49,7 @@ public class Dynamic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
+        //Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
         //if (collision.gameObject.name == "cherry")
         if (collision.gameObject.tag == "Item")
         {
@@ -64,7 +64,7 @@ public class Dynamic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
+        //Debug.Log($"OnCollisionEnter2D:{collision.gameObject.name}");
         ////if (collision.gameObject.name == "cherry")
         //if (collision.gameObject.tag == "Item")
         //{
