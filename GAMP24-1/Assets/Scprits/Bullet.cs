@@ -18,9 +18,23 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
+    }
+
+    //총알이 삭제되면서 오브젝트 소멸로 작동하지않음
+    //IEnumerator HitTimmer(SpriteRenderer spriteRenderer, float time = 0.1f)
+    //{
+    //    spriteRenderer.color = Color.red;
+    //    yield return new WaitForSeconds(time);
+    //    spriteRenderer.color = Color.white;
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Monster")
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.GetComponent<Opossum>().Hit();
             Destroy(this.gameObject);
         }
     }

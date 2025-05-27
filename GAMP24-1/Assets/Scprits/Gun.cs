@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
             //objBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.right * shotPower);
             GameObject objBullet = Instantiate(prefabBullet, trMozzle.position,Quaternion.identity);
             objBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.right * shotPower);
+            Destroy(objBullet,1);
         }
     }
 }
