@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -7,6 +8,7 @@ public class Eagle : MonoBehaviour
 {
     public float speed;
     public bool isMove;
+    public float site;
 
     public GameObject objTarget;
 
@@ -20,6 +22,22 @@ public class Eagle : MonoBehaviour
     void Update()
     {
         Move(objTarget);
+    }
+
+    private void FixedUpdate()
+    {
+        Collider2D collision = Physics2D.OverlapCircle(this.transform.position, site);
+
+        if (collision != null)
+        {
+            if (collision.tag == "Player")
+                objTarget = collision.gameObject;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, site);
     }
 
     bool Move(GameObject target)
