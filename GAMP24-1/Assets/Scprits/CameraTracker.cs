@@ -18,6 +18,7 @@ public class CameraTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (objTarget == null) return;
         //objTarget = GameObject.FindWithTag("Player");
 
         Move(objTarget);

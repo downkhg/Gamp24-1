@@ -12,6 +12,62 @@ public class Eagle : MonoBehaviour
 
     public GameObject objTarget;
 
+    public Transform trResponPoint;
+    public bool isRetrun;
+
+    void Return()
+    {
+        if (!isRetrun) return;
+
+        if (objTarget == null)
+        {
+            if (trResponPoint)
+                objTarget = trResponPoint.gameObject;
+        }
+
+        if (!isMove)
+            isPatrol = true;
+    }
+
+    public Transform trPatrolPoint;
+    public bool isPatrol;
+
+    void Patrol()
+    {
+        if (!isPatrol) return;
+
+        if (trPatrolPoint)
+        {
+            if (!isMove)
+            {
+                if(objTarget.name == trResponPoint.gameObject.name)
+                    objTarget = trPatrolPoint.gameObject;
+                else if (objTarget.name == trPatrolPoint.gameObject.name)
+                    objTarget = trResponPoint.gameObject;
+            }
+        }
+    }
+
+    public bool isFind = true;
+
+    void Find()
+    {
+        if (!isFind) return;
+
+        Collider2D[] collisions = Physics2D.OverlapCircleAll(this.transform.position, site);
+
+        foreach (Collider2D collision in collisions)
+        {
+            Debug.Log($"OverlapCircle({collision.gameObject.name})");
+
+            if (collision.tag == "Player")
+            {
+                objTarget = collision.gameObject;
+                isPatrol = false;
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,18 +77,14 @@ public class Eagle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move(objTarget);
+        isMove = Move(objTarget);
+        Patrol();
+        Return(); 
     }
 
     private void FixedUpdate()
     {
-        Collider2D collision = Physics2D.OverlapCircle(this.transform.position, site);
-
-        if (collision != null)
-        {
-            if (collision.tag == "Player")
-                objTarget = collision.gameObject;
-        }
+        Find();
     }
 
     private void OnDrawGizmos()
@@ -51,9 +103,6 @@ public class Eagle : MonoBehaviour
 
         float fDist = vDist.magnitude;
         float fMove = speed * Time.deltaTime;
-
-
-
 
         if (fDist > fMove)
         {

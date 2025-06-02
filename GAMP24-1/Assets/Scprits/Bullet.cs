@@ -33,9 +33,9 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Monster")
         {
-            //Destroy(collision.gameObject);
             HitEffect hitEffect = collision.GetComponent<HitEffect>();
             if (hitEffect != null) hitEffect.Hit();
+            Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
     }

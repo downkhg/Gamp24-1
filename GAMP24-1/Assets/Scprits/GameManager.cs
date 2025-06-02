@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public CameraTracker cameraTracker;
     public Responner responnerPlayer;
+    public Responner responnerEagle;
+    public Responner responnerOpussum;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,17 @@ public class GameManager : MonoBehaviour
         {
             cameraTracker.objTarget = responnerPlayer.objPlayer;
             cameraTracker.transform.rotation = Quaternion.identity;
+        }
+
+        if(responnerEagle.objPlayer)
+        {
+             Eagle eagle = responnerEagle.objPlayer.GetComponent<Eagle>();
+
+            if (eagle != null)
+            {
+                eagle.trResponPoint = responnerEagle.transform;
+                eagle.trPatrolPoint = responnerOpussum.transform;
+            }
         }
     }
 }

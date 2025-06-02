@@ -101,7 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   isMove: 0
+  site: 0
   objTarget: {fileID: 0}
+  trResponPoint: {fileID: 0}
+  isRetrun: 1
 --- !u!58 &3973710372033438390
 CircleCollider2D:
   m_ObjectHideFlags: 0

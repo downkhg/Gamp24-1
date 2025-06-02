@@ -565,8 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2f610978bfab14ba8dc18a92b88009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPlayer: {fileID: 1309800125}
-  prefabPlayer: {fileID: 4038403474004291349, guid: 986007b9c58233e4bb797dc45af8c92f, type: 3}
+  objPlayer: {fileID: 1358832609}
+  prefabPlayer: {fileID: 8832831050461508424, guid: 3f036b8c0a46d224396d85fd3bf5782c, type: 3}
   time: 1
   curTime: -1
 --- !u!212 &290533791
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objTarget: {fileID: 131187652}
   speed: 4
-  isRotate: 1
+  isRotate: 0
 --- !u!1 &915570789
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTracker: {fileID: 519420033}
   responnerPlayer: {fileID: 1394166637}
+  responnerEagle: {fileID: 290533790}
+  responnerOpussum: {fileID: 273166811}
 --- !u!4 &915570791
 Transform:
   m_ObjectHideFlags: 0
@@ -1727,7 +1729,7 @@ Transform:
   m_GameObject: {fileID: 1411943957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.96, y: 1.9, z: 0}
+  m_LocalPosition: {x: 4.42, y: 1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2313,7 +2315,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2520227813278346916, guid: 3f036b8c0a46d224396d85fd3bf5782c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.77
+      value: 4.23
       objectReference: {fileID: 0}
     - target: {fileID: 2520227813278346916, guid: 3f036b8c0a46d224396d85fd3bf5782c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2355,6 +2357,18 @@ PrefabInstance:
       propertyPath: site
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8804292787176281739, guid: 3f036b8c0a46d224396d85fd3bf5782c, type: 3}
+      propertyPath: isPatrol
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804292787176281739, guid: 3f036b8c0a46d224396d85fd3bf5782c, type: 3}
+      propertyPath: trPatrolPoint
+      value: 
+      objectReference: {fileID: 273166813}
+    - target: {fileID: 8804292787176281739, guid: 3f036b8c0a46d224396d85fd3bf5782c, type: 3}
+      propertyPath: trResponPoint
+      value: 
+      objectReference: {fileID: 290533789}
     - target: {fileID: 8832831050461508424, guid: 3f036b8c0a46d224396d85fd3bf5782c, type: 3}
       propertyPath: m_Name
       value: eagle
