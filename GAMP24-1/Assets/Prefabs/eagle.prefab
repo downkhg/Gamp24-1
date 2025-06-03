@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2520227813278346916}
   - component: {fileID: 3846524929148709340}
   - component: {fileID: 8804292787176281739}
-  - component: {fileID: 3973710372033438390}
   - component: {fileID: 2195384668646823602}
+  - component: {fileID: 5352449775035117508}
+  - component: {fileID: 5739418093031172587}
   m_Layer: 0
   m_Name: eagle
   m_TagString: Monster
@@ -101,11 +102,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   isMove: 0
-  site: 0
+  site: 3
   objTarget: {fileID: 0}
   trResponPoint: {fileID: 0}
   isRetrun: 1
---- !u!58 &3973710372033438390
+  trPatrolPoint: {fileID: 0}
+  isPatrol: 0
+  isFind: 1
+--- !u!58 &2195384668646823602
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,39 +143,35 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
---- !u!58 &2195384668646823602
-CircleCollider2D:
+  m_Radius: 1.025
+--- !u!114 &5352449775035117508
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8832831050461508424}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.025
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca805d51ef8ebb64c815e18f76c1c5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atk: 20
+  hp: 50
+  exp: 50
+  maxExp: 100
+  lv: 1
+  idx: 2
+--- !u!114 &5739418093031172587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8832831050461508424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61e0a99d0bba4f44ae0dce5f9d338ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHit: 0

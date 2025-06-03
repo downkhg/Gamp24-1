@@ -10,6 +10,8 @@ public class Dynamic : MonoBehaviour
     public bool isGround;
     public bool isJump;
 
+    public Gun gun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,11 @@ public class Dynamic : MonoBehaviour
                 isJump = true;
             }
         }
-           
+
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            gun.Shot(GetComponent<Player>());
+        }        
     }
 
     private void OnDestroy()

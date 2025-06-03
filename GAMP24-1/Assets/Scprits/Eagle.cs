@@ -15,18 +15,15 @@ public class Eagle : MonoBehaviour
     public Transform trResponPoint;
     public bool isRetrun;
 
-    void Return()
+    void SetReturnTarget(GameObject returnTarget)
     {
         if (!isRetrun) return;
 
         if (objTarget == null)
         {
             if (trResponPoint)
-                objTarget = trResponPoint.gameObject;
+                objTarget = returnTarget;
         }
-
-        if (!isMove)
-            isPatrol = true;
     }
 
     public Transform trPatrolPoint;
@@ -77,9 +74,11 @@ public class Eagle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetReturnTarget(trResponPoint.gameObject);
         isMove = Move(objTarget);
+        if (!isMove)
+            isPatrol = true;
         Patrol();
-        Return(); 
     }
 
     private void FixedUpdate()
@@ -117,16 +116,28 @@ public class Eagle : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
-            objTarget = collision.gameObject;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log($"{gameObject.name}.OnCollisionEnter2D({collision.gameObject}/{collision.gameObject.tag})");
         if (collision.gameObject.tag == "Player")
-            Destroy(collision.gameObject);
+        {
+            Player playerTarget = collision.gameObject.GetComponent<Player>();
+            Player playerMe = this.gameObject.GetComponent<Player>();
+
+            if (playerTarget && playerMe)
+            {
+                SuperMode superMode = collision.gameObject.GetComponent<SuperMode>();
+                if (superMode != null)
+                {
+                    if(!superMode.isUse)
+                    {
+                        playerMe.Attack(playerTarget);
+                        superMode.Use();
+                        Debug.Log("Attack!");
+                        if(playerTarget.Death()) Destroy(collision.gameObject);
+                    }
+                } 
+            } 
+        }
     }
 }
