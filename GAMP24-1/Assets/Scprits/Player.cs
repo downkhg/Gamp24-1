@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int atk;
-    public int hp;
+    public float atk;
+    public float hp;
     public int exp;
     public int maxExp = 100;
     public int lv = 1;

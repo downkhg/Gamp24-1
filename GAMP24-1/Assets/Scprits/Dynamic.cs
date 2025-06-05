@@ -12,6 +12,11 @@ public class Dynamic : MonoBehaviour
 
     public Gun gun;
 
+    private void Awake()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +47,7 @@ public class Dynamic : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.X))
         {
-            gun.Shot(GetComponent<Player>());
+            gun.Shot();
         }        
     }
 

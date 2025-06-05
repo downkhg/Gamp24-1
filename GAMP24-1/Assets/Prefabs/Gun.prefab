@@ -101,6 +101,8 @@ MonoBehaviour:
   trMozzle: {fileID: 3798463462585616335}
   prefabBullet: {fileID: 1128662596545858687, guid: a623fc8705aa61a42b6e8510ba56cb30, type: 3}
   shotPower: 300
+  bulletType: 2
+  isShot: 0
 --- !u!1 &2805905802172486620
 GameObject:
   m_ObjectHideFlags: 0

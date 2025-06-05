@@ -129,7 +129,7 @@ public class Eagle : MonoBehaviour
                 SuperMode superMode = collision.gameObject.GetComponent<SuperMode>();
                 if (superMode != null)
                 {
-                    if(!superMode.isUse)
+                    if(superMode.isUse == false)
                     {
                         playerMe.Attack(playerTarget);
                         superMode.Use();

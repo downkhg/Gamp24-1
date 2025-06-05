@@ -419,6 +419,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6803835075865727101, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
   m_PrefabInstance: {fileID: 1345327464}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &131187654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3525314503901998396, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
+  m_PrefabInstance: {fileID: 1345327464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131187652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca805d51ef8ebb64c815e18f76c1c5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &273166810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,6 +1441,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4224851895790268103, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
+      propertyPath: bulletType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224851895790268103, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
+      propertyPath: playerMaster
+      value: 
+      objectReference: {fileID: 131187654}
     - target: {fileID: 5170678330455364150, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -1437,6 +1456,22 @@ PrefabInstance:
     - target: {fileID: 5170678330455364150, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170678330455364150, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170678330455364150, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170678330455364150, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170678330455364150, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6803835075865727101, guid: 59afeb32d2c0bc7478b875ff49d7f95f, type: 3}
       propertyPath: m_Name
