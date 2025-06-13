@@ -5,6 +5,7 @@ using UnityEngine;
 public enum ItemType {NONE, FOOD, BULLET, BEHAVIOUR}
 public enum Fuction { NONE, SCORE, POISON, BLESS, BULLET, LEASER, SUPERMODE, EVENT_TRIGGER}
 
+[System.Serializable]
 public class ItemData
 {
     public string name;
@@ -23,6 +24,31 @@ public class ItemData
         Score = score;
         Comment = comment;
     }
+
+    public void Use(GameObject obj)
+    {
+        if (obj == null) return;
+        Dynamic dynamic = obj.GetComponent<Dynamic>();
+        if (dynamic == null) return; 
+        switch (fuction)
+        {
+            case Fuction.SCORE:
+                dynamic.score += Score;
+                break;
+            case Fuction.POISON:
+
+                break;
+            case Fuction.BLESS:
+
+                break;
+            case Fuction.BULLET:
+                dynamic.gun.bulletType = Fuction.BULLET;
+                break;
+            case Fuction.LEASER:
+                dynamic.gun.bulletType = Fuction.LEASER;
+                break;
+        }
+    }
 }
 
 public class ItemDataManager : MonoBehaviour
@@ -34,8 +60,14 @@ public class ItemDataManager : MonoBehaviour
         return itemDatas[idx];
     }
 
+    public ItemData GetItem(string name)
+    {
+        return itemDatas.Find(x => x.name == name);
+    }
+
     public void InitData()
     {
+        Debug.Log("InitData");
         itemDatas = new List<ItemData>();
         itemDatas.Clear();
         itemDatas.Add(new ItemData("Cherry",ItemType.FOOD, -1, Fuction.SCORE, 10,"사용하면 점수가 오른다."));
@@ -49,7 +81,7 @@ public class ItemDataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitData();
     }
 
     // Update is called once per frame

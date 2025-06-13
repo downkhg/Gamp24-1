@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Aim" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\Aim.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAACAAAAAAAAEAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraTracker" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAUAAAAAAKAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\CameraTracker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeathZone" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\DeathZone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eagle" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAUEAAIAAqFAAAAAAIEAIAAAAkAIAQAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\Eagle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Frog" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAIAAqAAAAAAAAAQIAAAAAAAAQAAAQAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\Frog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dynamic" Collapsed="true">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAJAACAAAAAQAAAIAAAAAEAAAQAAAQCgAAIAAEA=</HashCode>
+      <FileName>Assets\Scprits\Dynamic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACgAAAIAAAAAAEAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gun" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAACAAAAAACAQAAAAMAIBIAAAAIAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scprits\Gun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HitEffect" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAIAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\HitEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item" Collapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAQAAAAAAAAAAAIAAAAAgiADAAAAAAgE=</HashCode>
+      <FileName>Assets\Scprits\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Opossum" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAEAAAAAIAAAAAAAAAAQIAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\Opossum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Responner" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAACAAAAAAAAAQAAAIAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\Responner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperMode">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAAAACAAAAAAAAAAAAAEAAAAAAAAAAQAAEA=</HashCode>
+      <FileName>Assets\Scprits\SuperMode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

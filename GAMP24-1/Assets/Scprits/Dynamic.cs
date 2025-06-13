@@ -11,6 +11,7 @@ public class Dynamic : MonoBehaviour
     public bool isJump;
 
     public Gun gun;
+    public Iventory iventory;
 
     private void Awake()
     {
@@ -60,13 +61,24 @@ public class Dynamic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
+
+        Item item = collision.GetComponent<Item>();
+
+        if(item)
+        {
+            iventory.SetItem(item);
+            Destroy(item.gameObject);
+        }
+      
+
         //Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
         //if (collision.gameObject.name == "cherry")
-        if (collision.gameObject.tag == "Item")
-        {
-            score++;
-            Destroy(collision.gameObject);
-        }
+        //if (collision.gameObject.tag == "Item")
+        //{
+        //    score++;
+        //    Destroy(collision.gameObject);
+        //}
         //if(collision.gameObject.name == "Tilemap")
         //    isGround = true;
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,10 +10,21 @@ public class GameManager : MonoBehaviour
     public Responner responnerEagle;
     public Responner responnerOpussum;
 
+    public ItemDataManager itemDataManager;
+    public List<Item> itemList;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(this.gameObject.name + ".Start");
+        foreach (var item in itemList)
+        {
+            ItemData getitem = itemDataManager.GetItem(item.name);
+            if (getitem != null)
+                item.itemData = getitem;
+            else
+                Debug.LogWarning($"item:{item.name} is not Find!");
+        }
     }
 
     // Update is called once per frame
