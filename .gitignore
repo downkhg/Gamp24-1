@@ -73,8 +73,5 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-/GAMP24-1/Library
-/GAMP24-1/Assets/Prefabs/player.prefab
-/GAMP24-1/Assets/Scenes/SampleScene.unity
-/GAMP24-1/Assets/Scprits/ClassDiagram1.cd
 *.meta
+/GAMP24-1/Library
