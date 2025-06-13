@@ -55,7 +55,7 @@ public class Eagle : MonoBehaviour
 
         foreach (Collider2D collision in collisions)
         {
-            Debug.Log($"OverlapCircle({collision.gameObject.name})");
+            //Debug.Log($"OverlapCircle({collision.gameObject.name})");
 
             if (collision.tag == "Player")
             {
@@ -118,7 +118,7 @@ public class Eagle : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log($"{gameObject.name}.OnCollisionEnter2D({collision.gameObject}/{collision.gameObject.tag})");
+        //Debug.Log($"{gameObject.name}.OnCollisionEnter2D({collision.gameObject}/{collision.gameObject.tag})");
         if (collision.gameObject.tag == "Player")
         {
             Player playerTarget = collision.gameObject.GetComponent<Player>();

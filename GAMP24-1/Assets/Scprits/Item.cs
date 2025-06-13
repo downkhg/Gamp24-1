@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int score;
+    ItemData itemData;
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.gameObject.name = itemData.name;
     }
 
     // Update is called once per frame
@@ -22,7 +22,24 @@ public class Item : MonoBehaviour
         Dynamic dynamic = collision.GetComponent<Dynamic>();
         if (dynamic)
         {
-            dynamic.score += score;
+            switch( itemData.fuction)
+            {
+                case Fuction.SCORE:
+                    dynamic.score += itemData.Score;
+                    break;
+                case Fuction.POISON:
+
+                    break;
+                case Fuction.BLESS:
+                    
+                    break;
+                case Fuction.BULLET:
+                    dynamic.gun.bulletType = Fuction.BULLET;
+                    break;
+                case Fuction.LEASER:
+                    dynamic.gun.bulletType = Fuction.LEASER;
+                    break;
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ public class Responner : MonoBehaviour
         if (curTime >= time)
         {
             objPlayer = Instantiate(prefabPlayer, this.transform.position, Quaternion.identity);
-            Debug.Log($"ResponObject: {objPlayer.name}");
+            //Debug.Log($"ResponObject: {objPlayer.name}");
 
             curTime = -1;
         }
