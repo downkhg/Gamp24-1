@@ -56,12 +56,12 @@ public class Dynamic : MonoBehaviour
     {
         //게임오브젝트가 비활성화 된후에 복제되어 사용하기 어렵다.
         //Instantiate(this.gameObject, transform.postion);
-        Debug.Log($"OnDestroy:{this.gameObject.name}");
+        //Debug.Log($"OnDestroy:{this.gameObject.name}");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
+        //Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
 
         Item item = collision.GetComponent<Item>();
 

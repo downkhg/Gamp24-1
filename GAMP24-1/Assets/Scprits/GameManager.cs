@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Debug.Log(this.gameObject.name + ".Start");
+        SetScene(curSceneStatus);
         foreach (var item in itemList)
         {
             ItemData getitem = itemDataManager.GetItem(item.name);
@@ -45,6 +46,64 @@ public class GameManager : MonoBehaviour
                 eagle.trResponPoint = responnerEagle.transform;
                 eagle.trPatrolPoint = responnerOpussum.transform;
             }
+        }
+
+        UpdateScene();
+    }
+
+    public List<GameObject> listGUIScene;
+    public enum SceneStatus { NONE = - 1, TITLE, THEEND, GAMEOVER, PLAY, MAX}
+    public SceneStatus curSceneStatus = SceneStatus.NONE;
+
+    private void Awake()
+    {
+        
+    }
+
+    void ShowScene(SceneStatus sceneStatus)
+    {
+        for (int idx = 0; idx < listGUIScene.Count; idx++)
+        {
+            if (idx == (int)sceneStatus)
+            {
+                listGUIScene[idx].SetActive(true);
+                Debug.Log($"ShowScene({sceneStatus})");
+            }
+            else
+                listGUIScene[idx].SetActive(false);
+        }
+    }
+
+    void SetScene(SceneStatus sceneStatus)
+    {
+        Debug.Log($"SetScene({sceneStatus})");
+        switch(sceneStatus)
+        {
+            case SceneStatus.NONE:
+                break;
+            case SceneStatus.TITLE:
+                break;
+            case SceneStatus.THEEND:
+                break;
+            case SceneStatus.GAMEOVER:
+                break;
+        }
+        ShowScene(sceneStatus);
+        curSceneStatus = sceneStatus;
+    }
+
+    void UpdateScene()
+    {
+        switch (curSceneStatus)
+        {
+            case SceneStatus.NONE:
+                break;
+            case SceneStatus.TITLE:
+                break;
+            case SceneStatus.THEEND:
+                break;
+            case SceneStatus.GAMEOVER:
+                break;
         }
     }
 }
