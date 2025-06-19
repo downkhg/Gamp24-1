@@ -45,21 +45,28 @@
   <Class Name="Dynamic" Collapsed="true">
     <Position X="2.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQBAAJAACAAAAAQAAAIAAAAAEAAAQAAAQCgAAIAAEA=</HashCode>
+      <HashCode>AAQBAEJAACAAAAAQAAAIAAAAAEAAAQAAAQCgAAIAAEA=</HashCode>
       <FileName>Assets\Scprits\Dynamic.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameManager" Collapsed="true">
-    <Position X="8" Y="1.5" Width="1.5" />
+  <Class Name="GameManager">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="GameManager.SceneStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scprits\GameManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACgAAAIAAAAAAEAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAChAAhKACEAAgEAAAgBAAACAAICAAAAAAFA=</HashCode>
       <FileName>Assets\Scprits\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gun" Collapsed="true">
     <Position X="2.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQIAAAAACAAAAAACAQAAAAMAIBIAAAAIAAAAAAEAAA=</HashCode>
+      <HashCode>AAQIAAAACCAAAAAACAQAAAAMAIBIAAAAIAAAAAAEAAA=</HashCode>
       <FileName>Assets\Scprits\Gun.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -70,17 +77,17 @@
       <FileName>Assets\Scprits\HitEffect.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Item" Collapsed="true">
-    <Position X="6.25" Y="2.5" Width="1.5" />
+  <Class Name="Item">
+    <Position X="13.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAEAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scprits\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Player" Collapsed="true">
     <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAIAAQAAAAAAAAAAAIAAAAAgiADAAAAAAgE=</HashCode>
+      <HashCode>AAQAABAAACIAAQAAAAAAAAAAAJAAAAAgiADAAAAAAgE=</HashCode>
       <FileName>Assets\Scprits\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -99,11 +106,46 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SuperMode">
-    <Position X="10.75" Y="1.75" Width="1.5" />
+    <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQBAAAAAAAAACAAAAAAAAAAAAAEAAAAAAAAAAQAAEA=</HashCode>
       <FileName>Assets\Scprits\SuperMode.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ItemData">
+    <Position X="15.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAAAEgAAAAAAAAAAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\ItemDataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemDataManager">
+    <Position X="13.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAEAAAEAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scprits\ItemDataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Iventory">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAABACAAQAAAAAAAAAAAAAAAACAAAAAAgA=</HashCode>
+      <FileName>Assets\Scprits\Iventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ItemType">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAACAQAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scprits\ItemDataManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Fuction">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAIAAAQAAAAAgAIQAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scprits\ItemDataManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="맑은 고딕" Size="9" />
 </ClassDiagram>

@@ -5,7 +5,7 @@ using UnityEngine;
 public enum ItemType {NONE, FOOD, BULLET, BEHAVIOUR}
 public enum Fuction { NONE, SCORE, POISON, BLESS, BULLET, LEASER, SUPERMODE, EVENT_TRIGGER}
 
-[System.Serializable]
+[System.Serializable]//직렬화: 데이터를 저장하기 쉬운구조로 만든다.
 public class ItemData
 {
     public string name;
@@ -53,6 +53,7 @@ public class ItemData
 
 public class ItemDataManager : MonoBehaviour
 {
+    [SerializeField]
     List<ItemData> itemDatas;
 
     public ItemData GetItem(int idx)
@@ -79,10 +80,12 @@ public class ItemDataManager : MonoBehaviour
         itemDatas.Add(new ItemData("Trigger", ItemType.BEHAVIOUR, -1, Fuction.EVENT_TRIGGER, 10, "사용하면 점수가 오른다."));
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        InitData();
-    }
+    //다음과 같이 게임관리자에서 사용하는 콜백함수의 호출보다, 게임관리자의 스타트가 먼저 호출될 가능성 있는 경우 문제가 발생함.
+    //void Start()
+    //{
+    //    Debug.Log(gameObject.name + "ItemDataManager.Start()");
+    //    InitData();
+    //}
 
     // Update is called once per frame
     void Update()

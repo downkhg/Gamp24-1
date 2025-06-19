@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,10 +15,14 @@ public class GameManager : MonoBehaviour
     public ItemDataManager itemDataManager;
     public List<Item> itemList;
 
+    public static GameManager instance;
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(this.gameObject.name + ".Start");
+        instance = this;
+        itemDataManager.InitData();
+        Debug.Log(this.gameObject.name + "GameManager.Start");
         SetScene(curSceneStatus);
         foreach (var item in itemList)
         {
@@ -55,6 +61,32 @@ public class GameManager : MonoBehaviour
     public enum SceneStatus { NONE = - 1, TITLE, THEEND, GAMEOVER, PLAY, MAX}
     public SceneStatus curSceneStatus = SceneStatus.NONE;
 
+    public GUIStatusBar guiPlayerHPBar;
+
+    public void UpdatePlayerHPBar()
+    {
+        if(responnerPlayer.objPlayer != null)
+        {
+            Player player = responnerPlayer.objPlayer.GetComponent<Player>();
+            guiPlayerHPBar.UpdateStatus(player);
+        }
+    }
+
+    public void EventChangeSecne(int sceneStatueIdx)
+    {
+        SetScene((SceneStatus)sceneStatueIdx);
+    }
+
+    public void EventTheEnd()
+    {
+        if(curSceneStatus == SceneStatus.PLAY)
+            SetScene(SceneStatus.THEEND);
+    }
+
+    public void EventExit()
+    {
+        Application.Quit();
+    }
     private void Awake()
     {
         
@@ -74,9 +106,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SetScene(SceneStatus sceneStatus)
+    public void SetScene(SceneStatus sceneStatus)
     {
         Debug.Log($"SetScene({sceneStatus})");
+        Time.timeScale = 0; //정지
         switch(sceneStatus)
         {
             case SceneStatus.NONE:
@@ -86,13 +119,17 @@ public class GameManager : MonoBehaviour
             case SceneStatus.THEEND:
                 break;
             case SceneStatus.GAMEOVER:
+                SceneManager.LoadScene(0);
+                break;
+            case SceneStatus.PLAY:
+                Time.timeScale = 1; //정상속도
                 break;
         }
         ShowScene(sceneStatus);
         curSceneStatus = sceneStatus;
     }
 
-    void UpdateScene()
+    public void UpdateScene()
     {
         switch (curSceneStatus)
         {
@@ -103,6 +140,14 @@ public class GameManager : MonoBehaviour
             case SceneStatus.THEEND:
                 break;
             case SceneStatus.GAMEOVER:
+                break;
+            case SceneStatus.PLAY:
+                UpdatePlayerHPBar();
+
+                if (responnerPlayer.objPlayer == null)
+                {
+                    SetScene(SceneStatus.GAMEOVER);
+                }
                 break;
         }
     }

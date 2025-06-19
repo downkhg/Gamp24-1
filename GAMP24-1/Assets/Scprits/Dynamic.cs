@@ -61,7 +61,13 @@ public class Dynamic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
+        Debug.Log($"OnTriggerEnter2D:{collision.gameObject.name}");
+
+        if(collision.gameObject.name == "house")
+        {
+            GameManager.instance.EventTheEnd();
+        }
+
 
         Item item = collision.GetComponent<Item>();
 

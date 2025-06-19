@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,6 +11,15 @@ public class Player : MonoBehaviour
     public int exp;
     public int maxExp = 100;
     public int lv = 1;
+    float maxHP;
+
+    public float GetMaxHp() { return maxHP; }//getter
+    public float MaxHp { get { return maxHP; } } //¿Œµ¶º≠
+
+    private void Start()
+    {
+        maxHP = hp;  
+    }
 
     public void LvUp()
     {
@@ -18,6 +28,7 @@ public class Player : MonoBehaviour
             lv++;
             atk += 5;
             hp += 10;
+            maxHP += 10;
             exp -= maxExp;
         }
     }
